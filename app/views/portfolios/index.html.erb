@@ -3,6 +3,6 @@
   <h3><%= item.title %></h3>
   <p><%= item.subtitle %></p>
   <p><%= item.body %></p>
-  <p><%= image_tag item.thumb_image %></p>
+  <p><%= image_tag item.thumb_image unless item.thumb_image.nil?%></p>
   <hr>
 <% end %>
