@@ -1,13 +1,13 @@
 require 'faker'
 
 
-10.times do |blog|
+20.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
     body: Faker::Lorem.paragraph(3)
   )
 end
-puts "10 blog posts create"
+puts "20 blog posts create"
 
 prct = Array(30..70)
 5.times do |skill|
@@ -18,7 +18,7 @@ prct = Array(30..70)
 end
 puts "5 skills create"
 
-9.times do |item|
+15.times do |item|
   Portfolio.create!(
     title: "Portfolio title #{item}",
     subtitle: Faker::ChuckNorris.fact,
@@ -27,4 +27,4 @@ puts "5 skills create"
     thumb_image: "http://placehold.it/350x150"
   )
 end
-puts "9 Portfolio items create"
+puts "15 Portfolio items create"
