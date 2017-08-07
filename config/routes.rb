@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
+  get 'the-scope', to: 'portfolios#misc'
+  get 'other', to: 'portfolios#other'
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
 
