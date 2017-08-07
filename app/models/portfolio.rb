@@ -14,16 +14,18 @@
 
 class Portfolio < ApplicationRecord
   validates_presence_of :title, :subtitle, :body, :main_image, :thumb_image
-  before_validation :add_placeholder_image_if_blank
+
   def self.theScope
     where(subtitle: 'scope' )
   end
-
   scope :other_items_portfolio, -> { where(subtitle: 'other')}
 
+  after_initialize :set_defaults
+
   private
-  def add_placeholder_image_if_blank
-    self.thumb_image = 'http://via.placeholder.com/350x200' if self.thumb_image.blank?
-    self.main_image = 'http://via.placeholder.com/600x400' if self.main_image.blank?
+  def set_defaults
+    self.thumb_image ||= 'http://via.placeholder.com/350x200'
+    self.main_image ||= 'http://via.placeholder.com/600x400'
   end
+
 end
