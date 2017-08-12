@@ -16,6 +16,8 @@ class Portfolio < ApplicationRecord
   include Placeholder
   validates_presence_of :title, :subtitle, :body, :main_image, :thumb_image
 
+  has_many :technologies
+
   def self.theScope
     where(subtitle: 'scope' )
   end

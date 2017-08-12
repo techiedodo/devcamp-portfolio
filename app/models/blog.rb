@@ -8,6 +8,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  slug       :string
+#  status     :integer          default("draft")
+#  topic_id   :integer
 #
 
 class Blog < ApplicationRecord

@@ -23,7 +23,8 @@ prct = Array(30..70)
 5.times do |skill|
   Skill.create!(
     title: "Rails #{skill}",
-    percent_utilized: prct.sample
+    percent_utilized: prct.sample,
+    badge: Placeholder.image_generator(height: '250', width: '250')
   )
 end
 puts "#{Skill.count} skills total"
@@ -56,3 +57,11 @@ end
   )
 end
 puts "#{Portfolio.count} Portfolio items total"
+portfolios = Portfolio.all
+5.times do |tech|
+  Technology.create!(
+  name: "Technology #{tech}",
+  portfolio_id: portfolios.ids.sample
+  )
+end
+puts "3 technologies created"
